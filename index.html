@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GrowthMinded for Counselors — Ready-to-Use SEL &amp; Growth Mindset Tools for Every Student on Your Caseload</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   GrowthMinded — Counselor Landing Page v1
+   .gm- prefix used throughout to avoid Replo/Shopify theme collisions
+   Design tokens reconstructed from the Educator + Therapist pages
+   ========================================================= */
+:root{
+  --gm-navy:#1c3d5a;
+  --gm-navy-deep:#16344f;
+  --gm-blue:#3f7cb3;
+  --gm-blue-mid:#4a6fa5;
+  --gm-teal:#4f8f8c;
+  --gm-green:#6bb391;
+  --gm-green-dark:#5aa07f;
+  --gm-gold:#f2b84b;
+  --gm-ink:#2b3a47;
+  --gm-ink-soft:#41566a;
+  --gm-bg:#ffffff;
+  --gm-bg-light:#eef5fb;
+  --gm-bg-lighter:#f4f9fd;
+  --gm-card-border:#e2ebf3;
+  --gm-radius:14px;
+  --gm-maxw:1120px;
+  --gm-shadow:0 6px 22px rgba(28,61,90,.08);
+}
+*{box-sizing:border-box}
+.gm-page{margin:0;font-family:'Mulish',system-ui,-apple-system,sans-serif;color:var(--gm-ink);font-size:17px;line-height:1.6;background:var(--gm-bg);-webkit-font-smoothing:antialiased}
+.gm-page h1,.gm-page h2,.gm-page h3,.gm-page h4{font-family:'Poppins',system-ui,sans-serif;color:var(--gm-navy);line-height:1.18;margin:0}
+.gm-wrap{max-width:var(--gm-maxw);margin:0 auto;padding:0 22px}
+.gm-page img{max-width:100%;display:block}
+.gm-page a{color:inherit}
+
+/* ---- Buttons ---- */
+.gm-btn{display:inline-block;font-family:'Poppins';font-weight:700;text-decoration:none;text-align:center;border-radius:10px;padding:16px 26px;font-size:16px;letter-spacing:.3px;cursor:pointer;border:none;transition:transform .12s ease,box-shadow .12s ease}
+.gm-btn-green{background:var(--gm-green);color:#fff;box-shadow:0 4px 14px rgba(90,160,127,.35)}
+.gm-btn-green:hover{transform:translateY(-1px);box-shadow:0 7px 18px rgba(90,160,127,.45)}
+.gm-btn-outline{background:#fff;color:var(--gm-blue);border:2px solid var(--gm-blue)}
+.gm-btn-outline:hover{background:var(--gm-bg-light)}
+.gm-btn-sub{font-family:'Mulish';font-style:italic;font-size:13.5px;color:var(--gm-ink-soft);text-align:center;margin-top:8px;max-width:230px}
+
+/* ---- Header ---- */
+.gm-header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--gm-card-border)}
+.gm-header .gm-wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:14px;padding-bottom:14px}
+.gm-nav{display:flex;gap:26px;font-weight:700;font-size:15px}
+.gm-nav a{color:var(--gm-navy);text-decoration:none;border-bottom:2px solid transparent;padding-bottom:2px}
+.gm-nav a:hover{border-bottom-color:var(--gm-green)}
+.gm-logo{font-family:'Poppins';font-weight:800;font-size:23px;color:var(--gm-navy);letter-spacing:-.5px}
+.gm-logo span{color:var(--gm-blue)}
+.gm-logo small{display:block;font-weight:500;font-size:9px;letter-spacing:2px;color:var(--gm-ink-soft);text-align:center}
+.gm-header .gm-btn{padding:12px 20px;font-size:14px;background:#fff;color:var(--gm-green-dark);border:2px solid var(--gm-green)}
+.gm-menu-toggle{display:none}
+
+/* ---- Hero ---- */
+.gm-hero{background:var(--gm-bg-light);padding:52px 0 44px}
+.gm-hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:44px;align-items:center}
+.gm-hero h1{font-size:44px;font-weight:800;margin-bottom:20px}
+.gm-hero h1 em{color:var(--gm-blue);font-style:normal}
+.gm-hero p.gm-lead{font-size:18px;color:var(--gm-ink-soft);margin:0 0 28px}
+.gm-hero-ctas{display:flex;gap:18px;flex-wrap:wrap}
+.gm-hero-cta-col{display:flex;flex-direction:column;align-items:center}
+.gm-hero-collage{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:110px;gap:10px;position:relative}
+.gm-ph{background:linear-gradient(135deg,#d9e6f2,#c3d7ea);border-radius:12px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:11px;font-weight:700;color:#5a7591;padding:8px;line-height:1.3}
+.gm-badge{position:absolute;bottom:-14px;left:-6px;width:112px;height:112px;border-radius:50%;background:radial-gradient(circle,#5a7ea6,#3a5f88);color:#fff;display:flex;align-items:center;justify-content:center;text-align:center;font-size:9px;font-weight:700;padding:14px;box-shadow:var(--gm-shadow);line-height:1.3}
+
+/* ---- Full-width bars ---- */
+.gm-bar{padding:22px 0;text-align:center}
+.gm-bar-green{background:var(--gm-green);color:#fff}
+.gm-bar-green p{margin:0;font-style:italic;font-size:19px;font-weight:600;max-width:860px;margin:0 auto}
+.gm-bar-license{background:linear-gradient(180deg,#4a6fa5,#2f5580);color:#fff}
+.gm-bar-license strong{display:block;font-family:'Poppins';font-weight:700;font-size:19px;margin-bottom:8px}
+.gm-bar-license p{margin:0;font-style:italic;font-size:16px;opacity:.95;max-width:820px;margin:0 auto}
+.gm-bar-rating{background:var(--gm-green);color:#fff;padding:14px 0;text-align:center;font-style:italic;font-weight:600;font-size:16px}
+
+/* ---- Section scaffolding ---- */
+.gm-sec{padding:64px 0}
+.gm-sec-light{background:var(--gm-bg-lighter)}
+.gm-sec-lightblue{background:var(--gm-bg-light)}
+.gm-sec h2{font-size:34px;font-weight:800;text-align:center;margin-bottom:14px}
+.gm-sec .gm-eyebrow{text-align:center;color:var(--gm-blue);font-family:'Poppins';font-weight:700;font-style:italic;margin-bottom:8px;font-size:17px}
+.gm-sec .gm-sub{text-align:center;max-width:780px;margin:0 auto 40px;color:var(--gm-ink-soft);font-size:17px}
+.gm-sec .gm-sub em{font-style:italic;font-weight:700;color:var(--gm-navy)}
+
+/* ---- Ruler bullet lists ---- */
+.gm-rlist{list-style:none;padding:0;margin:0}
+.gm-rlist li{position:relative;padding-left:34px;margin-bottom:14px}
+.gm-rlist li::before{content:"📏";position:absolute;left:0;top:1px;font-size:16px}
+.gm-rlist li strong{color:var(--gm-navy)}
+
+/* ---- 5 Life Skills donut ---- */
+.gm-skills{display:grid;grid-template-columns:1fr auto 1fr;gap:30px;align-items:center;max-width:960px;margin:0 auto}
+.gm-donut{width:280px;height:280px;border-radius:50%;background:conic-gradient(
+  var(--gm-green) 0 20%, #d9534f 20% 40%, #a97fc0 40% 60%, var(--gm-gold) 60% 80%, #5ba8d6 80% 100%);
+  display:flex;align-items:center;justify-content:center;position:relative;margin:0 auto}
+.gm-donut::after{content:"GrowthMinded\ALife Skills";white-space:pre;text-align:center;font-family:'Poppins';font-weight:800;color:var(--gm-navy);font-size:20px;width:170px;height:170px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;line-height:1.2}
+.gm-skill{display:flex;flex-direction:column}
+.gm-skill h4{font-size:18px}
+.gm-skill span{font-style:italic;color:var(--gm-ink-soft);font-size:14px}
+.gm-skill.r{text-align:right}
+.gm-skill.l{text-align:left}
+
+/* ---- Growth Path ---- */
+.gm-path{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start;max-width:1000px;margin:0 auto}
+.gm-pyramid{display:flex;flex-direction:column-reverse;gap:6px}
+.gm-stage{padding:14px 20px;border-radius:8px;font-family:'Poppins';font-weight:700;color:var(--gm-navy);display:flex;justify-content:space-between;align-items:center;font-size:15px}
+.gm-stage small{font-weight:600;color:#7a8ea0;font-size:12px;letter-spacing:1px}
+.gm-stage:nth-child(1){background:#fdeecf;width:78%}
+.gm-stage:nth-child(2){background:#d9ecf6;width:82%}
+.gm-stage:nth-child(3){background:#dbeedd;width:86%}
+.gm-stage:nth-child(4){background:#fbf3cf;width:90%}
+.gm-stage:nth-child(5){background:#f6dede;width:95%}
+.gm-stage:nth-child(6){background:#e9e2f3;width:100%}
+.gm-path h3{font-size:20px;margin-bottom:6px;color:var(--gm-navy)}
+
+/* ---- Benefits radial ---- */
+.gm-benefits{display:grid;grid-template-columns:1fr 1fr;gap:30px 60px;max-width:960px;margin:0 auto}
+.gm-benefit h4{font-size:17px;margin-bottom:6px}
+.gm-benefit p{margin:0;color:var(--gm-ink-soft);font-size:15.5px}
+
+/* ---- What you'll get bento ---- */
+.gm-bento{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1040px;margin:0 auto}
+.gm-tile{background:#fff;border:1px solid var(--gm-card-border);border-radius:var(--gm-radius);padding:22px;box-shadow:var(--gm-shadow)}
+.gm-tile h4{color:var(--gm-blue);font-size:16.5px;margin-bottom:8px}
+.gm-tile p{margin:0;font-size:15px;color:var(--gm-ink-soft)}
+.gm-tile-wide{grid-column:span 1}
+
+/* ---- License block ---- */
+.gm-license{background:linear-gradient(180deg,#3f6699,#274a73);color:#fff;padding:56px 0;text-align:center}
+.gm-license h2{color:#fff;font-size:32px;margin-bottom:16px}
+.gm-license .gm-lic-intro{font-style:italic;max-width:720px;margin:0 auto 26px;font-size:18px;opacity:.96}
+.gm-lic-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.25);border-radius:var(--gm-radius);max-width:660px;margin:0 auto;padding:28px 30px;text-align:left}
+.gm-lic-card p.gm-grants{font-weight:700;text-align:center;margin:0 0 16px;font-family:'Poppins'}
+.gm-lic-card ul{list-style:none;padding:0;margin:0}
+.gm-lic-card li{padding-left:30px;position:relative;margin-bottom:12px;font-size:15.5px}
+.gm-lic-card li.ok::before{content:"✅";position:absolute;left:0}
+.gm-lic-card li.no::before{content:"⛔";position:absolute;left:0}
+
+/* ---- Tools cards ---- */
+.gm-tools{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;max-width:1000px;margin:0 auto}
+.gm-tool h3{text-align:center;color:var(--gm-blue);font-size:22px;margin-bottom:16px}
+.gm-tool-card{background:#fff;border-radius:var(--gm-radius);box-shadow:var(--gm-shadow);overflow:hidden}
+.gm-tool-thumb{aspect-ratio:3/4;background:linear-gradient(135deg,#eaf2f9,#d7e6f2);position:relative;display:flex;align-items:center;justify-content:center;text-align:center;color:#61809c;font-weight:700;font-size:12px;padding:16px}
+.gm-tool-dl{position:absolute;left:0;right:0;bottom:0;background:var(--gm-blue);color:#fff;font-family:'Poppins';font-weight:700;font-size:14px;padding:12px;text-align:center}
+.gm-tool-card>p{text-align:center;font-family:'Poppins';font-weight:700;color:var(--gm-navy);padding:16px;margin:0;font-size:15px}
+
+/* ---- Guides split ---- */
+.gm-split{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center;max-width:1040px;margin:0 auto}
+.gm-split .gm-ph{aspect-ratio:4/5}
+.gm-split h2{text-align:left;font-size:30px}
+.gm-feat{margin-top:20px}
+.gm-feat h4{color:var(--gm-blue);font-size:17px;margin-bottom:4px}
+.gm-feat p{margin:0 0 16px;color:var(--gm-ink-soft);font-size:15.5px}
+
+/* ---- Video cards ---- */
+.gm-vids{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:1000px;margin:0 auto 30px}
+.gm-vid{aspect-ratio:1/1;border-radius:14px;background:linear-gradient(135deg,#8fd0e6,#f2a7c4);display:flex;align-items:flex-end;justify-content:flex-start;color:#fff;font-weight:800;font-family:'Poppins';padding:12px;text-align:left;font-size:13px}
+
+/* ---- Success stories ---- */
+.gm-story{display:grid;grid-template-columns:0.9fr 1.1fr;gap:40px;align-items:center;max-width:1000px;margin:0 auto}
+.gm-story .gm-ph{aspect-ratio:1/1}
+.gm-story h4{color:var(--gm-blue);margin:0 0 6px;font-size:16px}
+.gm-story p{margin:0 0 14px;font-size:15.5px}
+.gm-story .gm-quote{font-family:'Poppins';font-weight:700;color:var(--gm-navy);font-style:italic}
+.gm-story .gm-attrib{color:var(--gm-green-dark);font-weight:700}
+.gm-tbar{padding:38px 0;color:#fff}
+.gm-tbar-blue{background:linear-gradient(120deg,#3a6099,#274a73)}
+.gm-tbar-teal{background:linear-gradient(120deg,#4f9b8f,#7abfa0)}
+.gm-tbar .gm-wrap{display:flex;gap:32px;align-items:center}
+.gm-avatar{width:150px;height:150px;border-radius:50%;flex-shrink:0;background:#cdd9e6 center/cover;border:6px solid rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center;text-align:center;font-size:11px;color:#5a7591;font-weight:700;padding:10px}
+.gm-tbar blockquote{margin:0;font-size:18px;line-height:1.5}
+.gm-tbar cite{display:block;margin-top:12px;font-style:normal;font-weight:700}
+
+/* ---- Coaches ---- */
+.gm-coaches{background:linear-gradient(120deg,#2f5f7d,#4f8f8c);color:#fff;padding:56px 0 0}
+.gm-coaches h2{color:#fff;font-size:30px;text-align:center;margin-bottom:12px}
+.gm-coaches .gm-csub{text-align:center;max-width:760px;margin:0 auto 30px;font-size:17px}
+.gm-coaches .gm-csub em{font-style:italic;font-weight:700}
+.gm-coach-card{background:#fff;color:var(--gm-ink);border-radius:var(--gm-radius);max-width:800px;margin:0 auto;padding:26px;display:flex;gap:22px;align-items:center;box-shadow:var(--gm-shadow)}
+.gm-coach-card .gm-avatar{width:110px;height:110px;border:4px solid var(--gm-green)}
+.gm-logos{background:#4a7fb5;color:#fff;padding:30px 0;margin-top:44px}
+.gm-logos p{text-align:center;font-weight:700;margin:0 0 18px;font-size:15px}
+.gm-logo-row{display:flex;justify-content:center;gap:36px;flex-wrap:wrap;align-items:center;opacity:.85}
+.gm-logo-chip{background:rgba(255,255,255,.12);border-radius:8px;padding:14px 20px;font-family:'Poppins';font-weight:700;font-size:13px;color:#fff}
+
+/* ---- Pricing ---- */
+.gm-pricing-intro{max-width:820px;margin:0 auto 34px;text-align:center;font-style:italic;color:var(--gm-ink-soft);font-size:17px}
+.gm-plans{display:grid;grid-template-columns:1fr 1fr;gap:26px;max-width:820px;margin:0 auto}
+.gm-plan{border:1px solid var(--gm-card-border);border-radius:var(--gm-radius);overflow:hidden;background:#fff;box-shadow:var(--gm-shadow)}
+.gm-plan-head{background:#f4f8fc;text-align:center;font-family:'Poppins';font-weight:700;color:var(--gm-navy);padding:18px;font-size:19px;border-bottom:1px solid var(--gm-card-border)}
+.gm-plan-price{text-align:center;font-family:'Poppins';font-weight:800;color:var(--gm-blue);font-size:48px;padding:22px 10px 6px}
+.gm-plan-price.custom{font-size:34px;padding-top:32px;padding-bottom:22px}
+.gm-plan-term{text-align:center;font-family:'Poppins';font-weight:700;color:var(--gm-navy);margin-bottom:8px}
+.gm-plan-desc{text-align:center;color:var(--gm-ink-soft);font-size:15px;padding:0 24px;min-height:78px}
+.gm-plan .gm-btn{display:block;margin:18px 24px 26px}
+.gm-guarantee{display:flex;align-items:center;gap:22px;max-width:660px;margin:32px auto 0;background:#fff;border:2px solid var(--gm-green);border-radius:var(--gm-radius);padding:20px 26px;box-shadow:var(--gm-shadow)}
+.gm-guarantee-badge{flex-shrink:0;width:92px;height:92px;border-radius:50%;background:var(--gm-green);color:#fff;font-family:'Poppins';font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center;text-align:center;line-height:1.1}
+.gm-guarantee p{margin:0;font-size:16px;color:var(--gm-ink)}
+.gm-fine{display:block;margin-top:6px;font-size:12.5px;color:var(--gm-ink-soft);font-style:italic}
+
+/* ---- Team CTA + FAQ ---- */
+.gm-teamcta{background:linear-gradient(180deg,#4a6fa5,#2f5580);color:#fff;text-align:center;padding:46px 0}
+.gm-teamcta h2{color:#fff;font-size:30px;margin-bottom:10px}
+.gm-teamcta p{font-style:italic;margin:0 0 14px;opacity:.95}
+.gm-teamcta a.gm-book{color:#fff;font-weight:700;text-decoration:underline}
+.gm-faq{max-width:840px;margin:0 auto}
+.gm-faq details{border-bottom:1px solid #c8d8e6;padding:18px 0}
+.gm-faq summary{font-family:'Poppins';font-weight:700;color:var(--gm-green-dark);font-size:17px;cursor:pointer;list-style:none}
+.gm-faq summary::-webkit-details-marker{display:none}
+.gm-faq summary::after{content:"+";float:right;color:var(--gm-blue);font-weight:800}
+.gm-faq details[open] summary::after{content:"–"}
+.gm-faq p{margin:12px 0 0;color:var(--gm-ink-soft);font-size:15.5px}
+.gm-footer{background:#12293d;color:#c7d5e2;text-align:center;padding:24px;font-size:14px}
+.gm-skillstrip{background:var(--gm-bg-light);padding:20px 0;text-align:center;font-size:16px;color:var(--gm-ink-soft)}
+.gm-skillstrip strong{color:var(--gm-navy)}
+.gm-formats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:14px;max-width:900px;margin:0 auto}
+.gm-fmt{text-align:center}
+.gm-fmt .gm-ph{aspect-ratio:3/4;margin-bottom:8px}
+.gm-fmt span{font-family:'Poppins';font-weight:700;color:var(--gm-navy);font-size:13px}
+
+/* ---- Responsive ---- */
+@media (max-width:900px){
+  .gm-hero-grid,.gm-path,.gm-split,.gm-story,.gm-benefits,.gm-skills{grid-template-columns:1fr}
+  .gm-donut{order:-1}
+  .gm-skills{gap:18px}
+  .gm-skill.r,.gm-skill.l{text-align:center}
+  .gm-bento,.gm-tools{grid-template-columns:1fr 1fr}
+  .gm-vids{grid-template-columns:1fr 1fr}
+  .gm-nav{display:none}
+  .gm-plans{grid-template-columns:1fr}
+  .gm-tbar .gm-wrap{flex-direction:column;text-align:center}
+}
+@media (max-width:560px){
+  .gm-hero h1{font-size:32px}
+  .gm-sec h2{font-size:26px}
+  .gm-bento,.gm-tools,.gm-vids{grid-template-columns:1fr}
+  .gm-hero-ctas{flex-direction:column}
+  .gm-btn{width:100%}
+  .gm-hero-cta-col{width:100%}
+  .gm-btn-sub{max-width:none}
+  .gm-guarantee{flex-direction:column;text-align:center}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body class="gm-page">
+
+<!-- ============ HEADER ============ -->
+<header class="gm-header">
+  <div class="gm-wrap">
+    <nav class="gm-nav">
+      <a href="#framework">Life Skills Framework</a>
+      <a href="#stories">Success Stories</a>
+      <a href="#pricing">Pricing</a>
+    </nav>
+    <div class="gm-logo">gr<span>o</span>wthminded<small>BY BIG LIFE JOURNAL</small></div>
+    <a href="#pricing" class="gm-btn">JOIN GROWTHMINDED</a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="gm-hero">
+  <div class="gm-wrap gm-hero-grid">
+    <div>
+      <h1>Ready-to-Use Tools for <em>Every Student on Your Caseload</em></h1>
+      <p class="gm-lead">You already know our resources — GrowthMinded brings them all into one membership, plus a new 15-minute curriculum, an AI assistant, and a professional license to use them across your whole caseload.</p>
+      <div class="gm-hero-ctas">
+        <div class="gm-hero-cta-col">
+          <a href="#pricing" class="gm-btn gm-btn-green">JOIN GROWTHMINDED</a>
+          <span class="gm-btn-sub">Get instant access to the full counselor library</span>
+        </div>
+        <div class="gm-hero-cta-col">
+          <a href="#demo" class="gm-btn gm-btn-outline">BOOK A DEMO</a>
+          <span class="gm-btn-sub">See how GrowthMinded fits your caseload</span>
+        </div>
+      </div>
+    </div>
+    <div class="gm-hero-collage">
+      <div class="gm-ph">[UGC: counselor + small group at a table, worksheets in use]</div>
+      <div class="gm-ph">[Student holding "I Am Strong Like a Tree" worksheet]</div>
+      <div class="gm-ph">[Child coloring an emotions worksheet]</div>
+      <div class="gm-ph">[Counseling office / calm corner]</div>
+      <div class="gm-ph">[Student proud, holding completed printable]</div>
+      <div class="gm-ph">[Small group circle activity]</div>
+      <div class="gm-badge">growthminded · Evidence-Based &amp; Rooted in Positive Child Psychology</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LICENSE BAR ============ -->
+<div class="gm-bar gm-bar-license">
+  <div class="gm-wrap">
+    <strong>✅ Includes a Professional License for Counselors</strong>
+    <p>Grants legal permission to use GrowthMinded tools in classroom guidance, small groups, and 1:1 sessions — with as many students as you support, whether you work in a school, district, or private practice.</p>
+  </div>
+</div>
+
+<!-- ============ 5 SKILLS STRIP (folded) ============ -->
+<div class="gm-skillstrip" id="framework">
+  <div class="gm-wrap">Built around five skills — <strong>Emotional Intelligence · Growth Mindset · Resilience · Adaptability · Confidence</strong> — with one shared language across your lessons, groups, and sessions.</div>
+</div>
+
+<!-- ============ GROWTH PATH ============ -->
+<section class="gm-sec gm-sec-lightblue">
+  <div class="gm-wrap">
+    <h2>The Growth Path</h2>
+    <p class="gm-eyebrow">The only library with a visible, teachable Growth Path</p>
+    <p class="gm-sub">A clear developmental progression that turns scattered activities into a skill-building system you can plan around, measure, and rely on.</p>
+    <div class="gm-path">
+      <div class="gm-pyramid">
+        <div class="gm-stage"><small>STAGE 1</small> AWARENESS</div>
+        <div class="gm-stage"><small>STAGE 2</small> UNDERSTANDING</div>
+        <div class="gm-stage"><small>STAGE 3</small> REGULATION</div>
+        <div class="gm-stage"><small>STAGE 4</small> EMPATHY</div>
+        <div class="gm-stage"><small>STAGE 5</small> PROBLEM-SOLVING</div>
+        <div class="gm-stage"><small>STAGE 6</small> INTEGRATION</div>
+      </div>
+      <div>
+        <h3>Why Counselors Rely on It</h3>
+        <p style="color:var(--gm-ink-soft)">A developmental progression you can teach in order, measure against observable stages, and map to Tier 1, Tier 2, and Tier 3 — with shared language across counselors, teachers, and families.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="gm-bar-rating">Trusted by licensed professionals ⭐ 9.58 / 10 average rating from therapists and clinicians</div>
+
+<!-- ============ CURRICULUM (NEW) ============ -->
+<section class="gm-sec gm-sec-light">
+  <div class="gm-wrap gm-split">
+    <div>
+      <p class="gm-eyebrow" style="text-align:left">New: The GrowthMinded Curriculum</p>
+      <h2>Grab a Lesson. Teach It in 15 Minutes.</h2>
+      <p style="color:var(--gm-ink-soft)">Ready-to-teach lesson plans built on the Growth Path — each one paired with Google Slides you can present as-is. No prep, no slide-building, no guessing what to say.</p>
+      <div class="gm-feat"><h4>📏 15-minute lesson plans</h4><p>Structured for a single guidance lesson, small group, or session — start to finish.</p></div>
+      <div class="gm-feat"><h4>📏 Google Slides included</h4><p>Open the deck and teach. Everything's ready to project.</p></div>
+      <div class="gm-feat"><h4>📏 Built for every grade level</h4><p>The Emotional Intelligence unit is live now for all grades, with more units rolling out.</p></div>
+    </div>
+    <div class="gm-ph" style="aspect-ratio:4/3">[Preview: 15-min Emotional Intelligence lesson plan + Google Slides deck]</div>
+  </div>
+</section>
+
+<!-- ============ BENEFITS ============ -->
+<section class="gm-sec">
+  <div class="gm-wrap">
+    <h2>Support More Students — With Less Prep</h2>
+    <p class="gm-sub">Build the life skills students will use for years — across every tier of support you provide.</p>
+    <div class="gm-benefits">
+      <div class="gm-benefit"><h4>Cut the Prep, Keep the Impact</h4><p>Log in and pull ready-to-use tools for your next lesson, group, or session. No building from scratch.</p></div>
+      <div class="gm-benefit"><h4>Cover Every Tier</h4><p>Whole-class guidance lessons, small groups, and 1:1 support — all from one searchable library.</p></div>
+      <div class="gm-benefit"><h4>Send Skills Home</h4><p>Parent-friendly handouts that keep the work going between sessions.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PLATFORM / WORKFLOW (NEW) ============ -->
+<section class="gm-sec gm-sec-lightblue">
+  <div class="gm-wrap gm-split">
+    <div>
+      <p class="gm-eyebrow" style="text-align:left">Built to run your whole caseload</p>
+      <h2>Everything Organized — and a Faster Way to Find It</h2>
+      <div class="gm-feat"><h4>📏 Meet Mindi, your AI assistant</h4><p>Ask Mindi for what you need — "a worksheet on test anxiety for a 3rd grader" or "a check-in for an anxious teen" — and get the right resource in seconds.</p></div>
+      <div class="gm-feat"><h4>📏 Save and organize with folders</h4><p>Keep your go-to resources in folders, like Google Drive — grouped by student, topic, or session.</p></div>
+      <div class="gm-feat"><h4>📏 Build classes and track what you've taught</h4><p>Set up groups, individuals, or classes, mark lessons as taught, and add your own notes — so nothing slips and prep stays a step ahead.</p></div>
+    </div>
+    <div class="gm-ph" style="aspect-ratio:4/3">[Screenshot: GrowthMinded library — folders, Mindi AI search, and class tracking]</div>
+  </div>
+</section>
+
+<!-- ============ LICENSE (THE #1 OBJECTION) ============ -->
+<section class="gm-license">
+  <div class="gm-wrap">
+    <h2>One License. Your Whole Caseload.</h2>
+    <p class="gm-lic-intro">If you use GrowthMinded with students or clients — even as a solo counselor — a professional license is required. Your individual license covers you across every student you support.</p>
+    <div class="gm-lic-card">
+      <p class="gm-grants">Your professional license grants:</p>
+      <ul>
+        <li class="ok">Legal permission to use GrowthMinded resources in classroom guidance, small groups, and 1:1 sessions.</li>
+        <li class="ok">Use with as many students and clients as you support — one login, your entire caseload, no per-student cap.</li>
+        <li class="ok">Share printables and handouts directly with students and families.</li>
+        <li class="no">Not for sharing one login across multiple staff (see Teams &amp; Schools) or for public/online file hosting or resale.</li>
+      </ul>
+      <p style="font-size:13.5px;opacity:.82;text-align:center;margin:16px 0 0;font-style:italic">Your license stays active with your membership. Renew anytime — usage rights end only if your license lapses.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SEE WHAT'S INSIDE (merged tools+guides+videos) ============ -->
+<section class="gm-sec">
+  <div class="gm-wrap">
+    <h2>Everything's Inside — Searchable in Seconds</h2>
+    <p class="gm-sub">700+ ready-to-use resources for every age you serve, from early elementary through teens and young adults — no journals or kits to buy separately.</p>
+    <div class="gm-formats">
+      <div class="gm-fmt"><div class="gm-ph">[Lesson plan preview]</div><span>Lesson &amp; Session Plans</span></div>
+      <div class="gm-fmt"><div class="gm-ph">[Worksheet preview]</div><span>Worksheets</span></div>
+      <div class="gm-fmt"><div class="gm-ph">[Poster preview]</div><span>Posters &amp; Visuals</span></div>
+      <div class="gm-fmt"><div class="gm-ph">[Guide / book list]</div><span>Guides &amp; Book Lists</span></div>
+      <div class="gm-fmt"><div class="gm-ph">[Video thumbnail]</div><span>Short Videos</span></div>
+    </div>
+    <ul class="gm-rlist" style="max-width:700px;margin:30px auto 0">
+      <li>Searchable by topic, skill, and Growth Path stage — plus games, activities, and role-plays</li>
+      <li>Parent-friendly printables to send home between sessions</li>
+      <li>An ever-growing library you help shape — Pro members request topics (that's how our divorce-support set came to be)</li>
+      <li>Add-on access for teams, so a whole department can stay aligned</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ SUCCESS STORIES (verbatim counselor reviews) ============ -->
+<section class="gm-sec gm-sec-light" id="stories">
+  <div class="gm-wrap">
+    <h2>Counselor Success Stories</h2>
+    <p class="gm-sub">Real counselors, in their own words, on the Big Life Journal resources now inside GrowthMinded.</p>
+    <div class="gm-story">
+      <div class="gm-ph">[Worksheet in use: "How My Anger Works" volcano activity, completed by a student]</div>
+      <div>
+        <h4>🎯 Saving Time for Busy Counselors</h4>
+        <p><strong>Challenge:</strong> Planning SEL support across a full K–5 caseload was overwhelming and time-consuming.</p>
+        <p><strong>How GrowthMinded helped:</strong> Search by topic to pull ready-to-print worksheets, games, and activities matched to each lesson, group, and 1:1 session.</p>
+        <p class="gm-quote">"Big Life Journal has been a powerful tool to use with students as a school counselor. I work with all ages K–5 and the printables and the tool kit have all been user friendly, appropriate and helpful. Students love them and we will definitely keep using this resource at our school for years to come."</p>
+        <p class="gm-attrib">— Susan M., School Counselor, Glenwood Springs, CO</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gm-tbar gm-tbar-blue">
+  <div class="gm-wrap">
+    <div class="gm-avatar">[Photo: Sierra P.]</div>
+    <div>
+      <blockquote>"As an Elementary School Counselor, I'm always looking for fun-filled ways to teach guidance lessons (that are different) to my kiddos. The Challenges Kit was a perfect fit! I highly recommend this product and other Big Life Journal publications as well. Excellent quality. Excellent fun!"</blockquote>
+      <cite>Sierra P., Elementary School Counselor, Portland, OR</cite>
+    </div>
+  </div>
+</div>
+<div class="gm-tbar gm-tbar-teal">
+  <div class="gm-wrap">
+    <div class="gm-avatar">[Photo: Meg Luffman]</div>
+    <div>
+      <blockquote>"I'm a licensed counselor, and I love the simplicity of positive psychology skills in the workbook. I use it for both adolescent and adult clients."</blockquote>
+      <cite>Meg Luffman, Licensed Counselor, Wellington, FL</cite>
+    </div>
+  </div>
+</div>
+
+<!-- ============ COACHES + LOGOS ============ -->
+<section class="gm-coaches">
+  <div class="gm-wrap">
+    <h2>Get real-time support from a human coach</h2>
+    <p class="gm-csub">Not sure which resource fits a student? Ask a GrowthMinded coach — a real person who can point you to the right tool for the situation in front of you.</p>
+    <div class="gm-coach-card">
+      <div class="gm-avatar">[Photo: GrowthMinded coach]</div>
+      <p style="margin:0">Message a coach inside GrowthMinded whenever you're stuck, and get a resource recommendation matched to your student, topic, or goal.</p>
+    </div>
+  </div>
+  <div class="gm-logos">
+    <p>Trusted by schools and counselors like yours</p>
+    <div class="gm-logo-row">
+      <div class="gm-logo-chip">Mayfield Junior School</div>
+      <div class="gm-logo-chip">Rowland Unified School District</div>
+      <div class="gm-logo-chip">Robina Scott Kindergarten</div>
+      <div class="gm-logo-chip">Blue Horizons Counseling Services</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section class="gm-sec" id="pricing">
+  <div class="gm-wrap">
+    <h2>Join the All-in-One Platform Built for Counselors</h2>
+    <p class="gm-pricing-intro">Gain instant access to ready-to-use, research-backed resources for classroom guidance, small groups, and 1:1 sessions. Whether you're short on time, juggling a full caseload, or supporting complex emotional needs, GrowthMinded helps you show up prepared.</p>
+    <p class="gm-pricing-intro" style="font-style:normal;font-weight:700;color:var(--gm-navy);margin-top:-16px">Everything's included. The Big Life Journal kits are already part of your GrowthMinded library — no journals or add-ons to buy separately.</p>
+    <ul class="gm-rlist" style="max-width:560px;margin:0 auto 34px">
+      <li>Includes a Professional License for counselors and mental health teams</li>
+      <li>Use in classroom lessons, small groups, or 1:1 sessions</li>
+      <li>Share printables and materials directly with students and families</li>
+      <li>Prefer not to print? Most tools work on-screen for whole-class and 1:1</li>
+      <li>Not for public/online file hosting or resale</li>
+    </ul>
+    <div class="gm-plans">
+      <div class="gm-plan">
+        <div class="gm-plan-head">Individual</div>
+        <div class="gm-plan-price">$297</div>
+        <div class="gm-plan-term">Annual Membership</div>
+        <div class="gm-plan-desc">Perfect for one counselor. A single login covering your entire caseload.</div>
+        <a href="#" class="gm-btn gm-btn-green">JOIN GROWTHMINDED</a>
+      </div>
+      <div class="gm-plan">
+        <div class="gm-plan-head">Teams &amp; Schools</div>
+        <div class="gm-plan-price custom">Custom Pricing</div>
+        <div class="gm-plan-term">Annual Membership</div>
+        <div class="gm-plan-desc">Best for counseling departments, districts, or group practices. Multi-user management, a customized framework, and dedicated implementation support.</div>
+        <a href="#demo" class="gm-btn gm-btn-green">BOOK A DEMO</a>
+      </div>
+    </div>
+    <div class="gm-guarantee">
+      <span class="gm-guarantee-badge">30-DAY<br>GUARANTEE</span>
+      <p><strong>Try GrowthMinded risk-free.</strong> Not the right fit? Request a full refund within 30 days.<span class="gm-fine">*Full refund available if you've downloaded fewer than 10 resources.</span></p>
+    </div>
+    <p style="text-align:center;max-width:620px;margin:16px auto 0;color:var(--gm-ink-soft);font-size:15px">Want your school or district to cover it? We accept purchase orders — <a href="#demo" style="color:var(--gm-blue);font-weight:700">request a quote and W-9</a>.</p>
+  </div>
+</section>
+
+<!-- ============ TEAM CTA ============ -->
+<section class="gm-teamcta" id="demo">
+  <div class="gm-wrap">
+    <h2>Need access for your whole counseling team or district?</h2>
+    <p>We offer multi-user licenses for counseling departments, schools, districts, and group practices.</p>
+    <p>Need a purchase order, quote, or W-9? We've got you — just ask when you book.</p>
+    <p>👉 <a class="gm-book" href="#">Book a call</a> with our team to find the best fit.</p>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="gm-sec gm-sec-lightblue">
+  <div class="gm-wrap">
+    <h2 style="margin-bottom:34px">FAQ</h2>
+    <div class="gm-faq">
+      <details><summary>Who is the professional membership for?</summary><p>GrowthMinded is built for school counselors, mental health and licensed counselors, social workers, school psychologists, and other professionals who support children's emotional growth and life skills in schools, practices, or group settings.</p></details>
+      <details><summary>Can I use this across my whole caseload?</summary><p>Yes. Your individual license covers you as one professional across as many students and clients as you support — classroom guidance lessons, small groups, and 1:1 sessions — under a single login, with no per-student cap. Usage rights stay active as long as your membership does.</p></details>
+      <details><summary>Is the content aligned with MTSS and SEL standards?</summary><p>Resources are organized to support Tier 1, Tier 2, and Tier 3 work, and the Growth Path gives you a developmental progression to plan and measure against.</p></details>
+      <details><summary>What ages is the content for?</summary><p>Early elementary through teens and young adults — with strong support for teens and young adults, the group most often underserved. Every resource is labeled by age and grade band so you can match the right tool to the right student.</p></details>
+      <details><summary>Do I need to buy the journals or kits separately?</summary><p>No. GrowthMinded is your complete library — the Big Life Journal kits are already included. There's nothing else to buy.</p></details>
+      <details><summary>Is there a curriculum with ready-to-teach lesson plans?</summary><p>Yes. GrowthMinded includes 15-minute lesson plans built on the Growth Path, each with Google Slides you can present as-is. The Emotional Intelligence unit is available now for every grade level, with more units rolling out.</p></details>
+      <details><summary>Can I share resources with parents and families?</summary><p>Yes. You can share printables and handouts directly with the students and families you work with.</p></details>
+      <details><summary>Can my counseling team or district share one membership?</summary><p>An individual membership is a single login for one professional. For departments, schools, or districts, our Teams &amp; Schools plan adds multi-user access — book a call to find the right fit.</p></details>
+      <details><summary>Can my school or district pay by purchase order?</summary><p>Yes. We accept purchase orders and can provide a quote and a W-9 so your school or district can cover your membership. Just ask when you book a call.</p></details>
+      <details><summary>Can I use it on my mobile device, or without a printer?</summary><p>Yes. GrowthMinded works on mobile, and many videos and visuals can be used on-screen in session without printing.</p></details>
+      <details><summary>What is the refund and cancellation policy?</summary><p>GrowthMinded comes with a 30-day money-back guarantee — if it's not the right fit, request a full refund within 30 days (available if you've downloaded fewer than 10 resources). You can cancel your membership at any time to stop future renewals.</p></details>
+    </div>
+  </div>
+</section>
+
+<footer class="gm-footer">© Copyright 2025 &nbsp;·&nbsp; Big Life Journal &nbsp;·&nbsp; All Rights Reserved</footer>
+
+</body>
+</html>
